@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholar Project Matcher</title>
+    <meta name="description" content="Find and match scholars to their respective specialized training projects.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Main Application Area -->
+        <main class="main-card">
+            <header>
+                <h1>Scholar Project Matcher</h1>
+                <p>Welcome to the scholarship portal. Enter your details to reveal your personalized capstone project.</p>
+            </header>
+
+            <!-- State 1: Input Form -->
+            <section id="form-section" class="active-state">
+                <form id="matcher-form">
+                    <div class="form-group">
+                        <label for="scholar-name">Scholar Name</label>
+                        <input type="text" id="scholar-name" list="scholars-list" placeholder="Enter or select your name" required autocomplete="off">
+                        <datalist id="scholars-list"></datalist>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="scholar-track">Track</label>
+                        <input type="text" id="scholar-track" placeholder="e.g., Frontend Development" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="scholar-skills">Other Skills (Optional)</label>
+                        <input type="text" id="scholar-skills" placeholder="e.g., UI/UX, AI Prompting">
+                    </div>
+
+                    <button type="submit" id="generate-btn" class="primary-btn">Generate Project</button>
+                </form>
+            </section>
+
+            <!-- State 2: Loading Section -->
+            <section id="loading-section" class="hidden-state">
+                <div class="loader-content">
+                    <div class="spinner"></div>
+                    <div class="progress-container">
+                        <div class="progress-bar-fill" id="progress-bar"></div>
+                    </div>
+                    <p id="loading-text">Matching scholar to best-fit project...</p>
+                    <span id="progress-percentage">0%</span>
+                </div>
+            </section>
+
+            <!-- State 3: Result Card -->
+            <section id="result-section" class="hidden-state">
+                <div class="result-card">
+                    <div class="result-header">
+                        <span class="badge" id="result-priority">High Priority</span>
+                        <h2 id="result-title">Project Title</h2>
+                    </div>
+                    <div class="scholar-details-summary">
+                        <p><strong>Scholar:</strong> <span id="res-name">Name</span></p>
+                        <p><strong>Track:</strong> <span id="res-track">Track</span></p>
+                        <p><strong>Skills:</strong> <span id="res-skills">Skills</span></p>
+                    </div>
+                    <div class="result-actions">
+                        <button id="view-project-btn" class="primary-btn">View Full Project</button>
+                        <button id="reset-btn" class="secondary-btn">Reset</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Secondary Area: Group Project -->
+        <aside class="group-project-card">
+            <div class="glass-content">
+                <h3>Shared Group Project</h3>
+                <h4 id="group-title">ScholarSphere</h4>
+                <p id="group-summary">A collaborative cross-functional project for all scholars.</p>
+                <h5>Key Modules:</h5>
+                <ul id="group-modules">
+                    <!-- Populated by JS -->
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Modal for Full Project Brief -->
+    <div id="project-modal" class="modal-overlay hidden-state" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2 id="modal-title">Project Title</h2>
+                <button id="modal-close-icon" class="icon-btn" aria-label="Close modal">
+                    &times;
+                </button>
+            </div>
+            <div class="modal-body" id="printable-brief">
+                <div class="brief-section">
+                    <h3>Project Overview</h3>
+                    <p id="modal-overview"></p>
+                </div>
+                <div class="brief-section">
+                    <h3>Why This Proves Track</h3>
+                    <p id="modal-why"></p>
+                </div>
+                <div class="brief-section">
+                    <h3>Problem Statement</h3>
+                    <p id="modal-problem"></p>
+                </div>
+                <div class="brief-section">
+                    <h3 id="tasks-modules-title">Requirements</h3>
+                    <ul id="modal-tasks-modules"></ul>
+                </div>
+                <div class="brief-section">
+                    <h3>Research Requirement</h3>
+                    <p id="modal-research"></p>
+                </div>
+                <div class="brief-section">
+                    <h3>Deliverables</h3>
+                    <ul id="modal-deliverables"></ul>
+                </div>
+                <div class="brief-section">
+                    <h3>Expected Outcome</h3>
+                    <p id="modal-outcome"></p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="share-actions">
+                    <button id="copy-btn" class="secondary-btn">Copy Brief</button>
+                    <button id="share-btn" class="secondary-btn">Share</button>
+                </div>
+                <button id="modal-close-btn" class="primary-btn">Close</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="toast" id="toast-message">Copied to clipboard!</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
