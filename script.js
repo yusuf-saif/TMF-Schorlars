@@ -362,17 +362,157 @@ const scholars = [
 ];
 
 const groupProject = {
-  title: "ScholarSphere Cohort Collaboration Project",
+  shortTitle: "SkillSpring",
+  title: "SkillSpring: Student Learning, Mentorship, and Progress Platform",
+  teaser:
+    "A shared cohort challenge to design a student platform where learning paths, mentorship, and progress visibility come together in one polished product.",
   summary:
-    "All scholars will work together on one shared product that combines planning, interface design, analytics thinking, and structured delivery. The project should be divided into modules so each participant contributes through their main track.",
-  modules: [
-    "Public landing experience",
-    "Authentication and onboarding flow",
-    "Scholar dashboard",
-    "Task and progress management",
-    "Analytics and reporting view",
-    "Product planning and documentation",
-    "Presentation and final demo"
+    "SkillSpring is a shared product challenge for the whole cohort: a platform where students can follow structured learning journeys, connect with mentors, and track their growth through clear progress views and support checkpoints.",
+  overview:
+    "Build a presentation-ready product MVP for a student learning and mentorship platform. The experience should help learners understand what they should learn next, how they are progressing, when they need mentor support, and how a program team can monitor momentum across the cohort.",
+  problemStatement:
+    "Students in training programs often rely on scattered chats, spreadsheets, and reminders to know what to learn next, who can support them, and whether they are truly making progress. Mentors and coordinators also struggle to spot blockers early when progress is not visible in one shared system.",
+  mainUsers: [
+    {
+      title: "Students and Scholars",
+      description:
+        "Need a clear dashboard for learning goals, mentor support, weekly tasks, and progress milestones."
+    },
+    {
+      title: "Mentors and Coaches",
+      description:
+        "Need visibility into learner progress, pending support requests, session planning, and feedback moments."
+    },
+    {
+      title: "Program Coordinators",
+      description:
+        "Need a cohort-wide view of engagement, performance trends, blockers, and intervention opportunities."
+    }
+  ],
+  coreModules: [
+    {
+      title: "Onboarding and Learner Profile",
+      description:
+        "Capture learner goals, preferred track, current level, and mentorship needs from the start."
+    },
+    {
+      title: "Learning Path Dashboard",
+      description:
+        "Show modules, upcoming tasks, progress percentages, milestones, and next recommended actions."
+    },
+    {
+      title: "Mentorship Match and Session Flow",
+      description:
+        "Allow learners to discover mentors, request sessions, and view upcoming mentorship touchpoints."
+    },
+    {
+      title: "Weekly Goals and Progress Tracker",
+      description:
+        "Track assignments, submissions, streaks, feedback, and completion status in one structured workflow."
+    },
+    {
+      title: "Resources and Announcements Hub",
+      description:
+        "Give learners one place for learning resources, updates, support guides, and important program messages."
+    },
+    {
+      title: "Admin Analytics and Intervention View",
+      description:
+        "Display cohort progress snapshots, engagement flags, and quick indicators for learners needing attention."
+    }
+  ],
+  ownership: [
+    {
+      title: "Frontend Development",
+      description:
+        "Own the landing experience, onboarding flow, dashboards, mentor screens, progress states, and responsive UI polish."
+    },
+    {
+      title: "Product Management",
+      description:
+        "Own the PRD, user stories, MVP scope, sprint priorities, acceptance criteria, and final demo narrative."
+    },
+    {
+      title: "Data Analytics",
+      description:
+        "Own KPI definitions, reporting views, cohort metrics, and insight summaries that explain what the data means."
+    },
+    {
+      title: "Data Science",
+      description:
+        "Own learner-risk signals, recommendation concepts, simple prediction logic, and ideas for smarter support routing."
+    }
+  ],
+  technicalFeatures: [
+    "Role-based dashboard views for students, mentors, and coordinators using mock data.",
+    "Mentor request or session-booking flow with clear states such as pending, scheduled, and completed.",
+    "Progress timeline with milestones, completion indicators, and weekly check-in cards.",
+    "Search, filters, and status tags for modules, students, or support requests.",
+    "Analytics widgets that visualize cohort progress, activity rates, and intervention signals.",
+    "Local data persistence with browser storage so the demo feels more interactive without a backend.",
+    "Copy or share-ready summary states for presentation and walkthrough moments."
+  ],
+  animationIdeas: [
+    "Reveal the group project with spotlight text, a progress beam, and staged intro messaging.",
+    "Use staggered card entrances for the dashboard and module cards when sections load.",
+    "Animate progress bars, milestone rings, and completion counters as learners open their dashboard.",
+    "Add smooth modal transitions, floating background accents, and subtle hover motion on key cards.",
+    "Use timeline fills or step indicators to make learning progress feel dynamic during presentations."
+  ],
+  mvpScope: [
+    {
+      phase: "Week 1",
+      focus: "Foundation and core learner journey",
+      items: [
+        "Finalize the product brief, user stories, and MVP scope.",
+        "Design and build the landing page, onboarding flow, and learner dashboard.",
+        "Set up mock data structure for profiles, modules, mentors, and progress states.",
+        "Create the first pass of mentorship and weekly progress screens."
+      ]
+    },
+    {
+      phase: "Week 2",
+      focus: "Insights, polish, and presentation readiness",
+      items: [
+        "Add coordinator analytics, mentor support views, and status-rich UI states.",
+        "Apply motion polish, transitions, and responsive refinements across the app.",
+        "Prepare analytics insights, risk logic explanation, and product presentation assets.",
+        "Run final QA, tighten the story, and rehearse the live demo."
+      ]
+    }
+  ],
+  deliverables: [
+    "Responsive frontend MVP for SkillSpring with polished learner, mentor, and coordinator flows.",
+    "Product documentation covering goals, personas, user stories, scope, and priorities.",
+    "Analytics or reporting view that highlights meaningful cohort insights.",
+    "Data science logic note or prototype showing learner-risk or recommendation thinking.",
+    "Presentation deck, demo script, and team walkthrough of the final product."
+  ],
+  successLooksLike: [
+    "A learner can instantly understand what to learn next, what support is available, and how they are progressing.",
+    "A mentor can quickly identify who needs help, what is blocked, and where feedback should go next.",
+    "A coordinator can spot engagement trends, at-risk learners, and progress health at a glance.",
+    "The full cohort presents one cohesive product story with clear role ownership and strong visual polish."
+  ],
+  revealSequence: [
+    {
+      label: "Ready",
+      title: "Are you ready?",
+      text: "Your cohort challenge is here.",
+      status: "The stage lights are warming up."
+    },
+    {
+      label: "Challenge",
+      title: "Your cohort challenge is here",
+      text: "One shared platform. Multiple tracks. One strong product story.",
+      status: "Bringing the full brief into focus."
+    },
+    {
+      label: "Reveal",
+      title: "Revealing group project...",
+      text: "SkillSpring is about to open.",
+      status: "Opening the presentation view now."
+    }
   ]
 };
 
@@ -421,35 +561,62 @@ const elements = {
     resTitle: document.getElementById('result-title'),
     resPriority: document.getElementById('result-priority'),
     viewProjectBtn: document.getElementById('view-project-btn'),
+    revealGroupBtn: document.getElementById('reveal-group-btn'),
+    groupRevealHeading: document.getElementById('group-reveal-heading'),
+    groupRevealDescription: document.getElementById('group-reveal-description'),
     resetBtn: document.getElementById('reset-btn'),
 
-    // Group Project
+    // Group Project teaser
     groupTitle: document.getElementById('group-title'),
     groupSummary: document.getElementById('group-summary'),
     groupModules: document.getElementById('group-modules'),
 
-    // Modal
+    // Personal project modal
     modal: document.getElementById('project-modal'),
     modalTitle: document.getElementById('modal-title'),
-    
-    // New Modal Fields
     modalOverview: document.getElementById('modal-overview'),
     modalWhy: document.getElementById('modal-why'),
     modalProblem: document.getElementById('modal-problem'),
-    
     tasksModulesTitle: document.getElementById('tasks-modules-title'),
     modalTasksModules: document.getElementById('modal-tasks-modules'),
-    
     modalResearch: document.getElementById('modal-research'),
     modalDeliverables: document.getElementById('modal-deliverables'),
     modalOutcome: document.getElementById('modal-outcome'),
-    
-    // Other modal controls
     modalCloseBtn: document.getElementById('modal-close-btn'),
     modalCloseIcon: document.getElementById('modal-close-icon'),
     copyBtn: document.getElementById('copy-btn'),
     shareBtn: document.getElementById('share-btn'),
-    
+
+    // Group reveal overlay
+    groupRevealOverlay: document.getElementById('group-reveal-overlay'),
+    groupRevealCopyBlock: document.getElementById('group-reveal-copy-block'),
+    groupRevealTitle: document.getElementById('group-reveal-title'),
+    groupRevealText: document.getElementById('group-reveal-text'),
+    groupRevealStatus: document.getElementById('group-reveal-status'),
+    groupRevealProgress: document.getElementById('group-reveal-progress'),
+    groupRevealSteps: document.getElementById('group-reveal-steps'),
+
+    // Group project modal
+    groupProjectModal: document.getElementById('group-project-modal'),
+    groupModalTitle: document.getElementById('group-modal-title'),
+    groupModalTagline: document.getElementById('group-modal-tagline'),
+    groupHeroTitle: document.getElementById('group-hero-title'),
+    groupHeroSummary: document.getElementById('group-hero-summary'),
+    groupOverview: document.getElementById('group-overview'),
+    groupProblem: document.getElementById('group-problem'),
+    groupMainUsers: document.getElementById('group-main-users'),
+    groupCoreModules: document.getElementById('group-core-modules'),
+    groupOwnership: document.getElementById('group-ownership'),
+    groupTechnicalFeatures: document.getElementById('group-technical-features'),
+    groupAnimationIdeas: document.getElementById('group-animation-ideas'),
+    groupMvpScope: document.getElementById('group-mvp-scope'),
+    groupDeliverables: document.getElementById('group-deliverables'),
+    groupSuccess: document.getElementById('group-success'),
+    groupModalCloseBtn: document.getElementById('group-modal-close-btn'),
+    groupModalCloseIcon: document.getElementById('group-modal-close-icon'),
+    groupCopyBtn: document.getElementById('group-copy-btn'),
+    groupShareBtn: document.getElementById('group-share-btn'),
+
     // Toast
     toast: document.getElementById('toast-message')
 };
@@ -459,11 +626,19 @@ let currentProject = null;
 let currentScholarName = "";
 let currentScholarTrack = "";
 let currentScholarSkills = "";
+let revealTimers = [];
+let toastTimer = null;
+
+const OVERLAY_TRANSITION_MS = 300;
 
 // Initialization
 function init() {
     populateDatalist();
     renderGroupProject();
+    renderRevealSteps();
+    resetGroupRevealTeaser();
+    resetGroupRevealState();
+    configureShareButtons();
     attachEventListeners();
 }
 
@@ -480,13 +655,35 @@ function populateDatalist() {
 // Render the shared group project data
 function renderGroupProject() {
     elements.groupTitle.textContent = groupProject.title;
-    elements.groupSummary.textContent = groupProject.summary;
-    
+    elements.groupSummary.textContent = groupProject.teaser;
+
     elements.groupModules.innerHTML = '';
-    groupProject.modules.forEach(module => {
+    groupProject.coreModules.slice(0, 5).forEach(module => {
         const li = document.createElement('li');
-        li.textContent = module;
+        li.textContent = module.title;
         elements.groupModules.appendChild(li);
+    });
+}
+
+function renderRevealSteps() {
+    elements.groupRevealSteps.innerHTML = '';
+    groupProject.revealSequence.forEach(step => {
+        const pill = document.createElement('span');
+        pill.className = 'reveal-step';
+        pill.textContent = step.label;
+        elements.groupRevealSteps.appendChild(pill);
+    });
+}
+
+function configureShareButtons() {
+    if (navigator.share) return;
+
+    elements.shareBtn.style.display = 'none';
+    elements.groupShareBtn.style.display = 'none';
+
+    [elements.copyBtn, elements.groupCopyBtn].forEach(button => {
+        button.classList.remove('secondary-btn');
+        button.classList.add('primary-btn');
     });
 }
 
@@ -508,32 +705,53 @@ function attachEventListeners() {
     });
 
     elements.form.addEventListener('submit', handleFormSubmit);
-    
+
     // Result actions
     elements.viewProjectBtn.addEventListener('click', openModal);
+    elements.revealGroupBtn.addEventListener('click', startGroupProjectReveal);
     elements.resetBtn.addEventListener('click', resetApp);
-    
-    // Modal actions
+
+    // Personal modal actions
     elements.modalCloseBtn.addEventListener('click', closeModal);
     elements.modalCloseIcon.addEventListener('click', closeModal);
     elements.modal.addEventListener('click', (e) => {
         if (e.target === elements.modal) closeModal();
     });
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && elements.modal.classList.contains('active-state')) {
-            closeModal();
-        }
+
+    // Group reveal and modal actions
+    elements.groupRevealOverlay.addEventListener('click', (e) => {
+        if (e.target === elements.groupRevealOverlay) cancelGroupReveal();
     });
+    elements.groupModalCloseBtn.addEventListener('click', closeGroupProjectModal);
+    elements.groupModalCloseIcon.addEventListener('click', closeGroupProjectModal);
+    elements.groupProjectModal.addEventListener('click', (e) => {
+        if (e.target === elements.groupProjectModal) closeGroupProjectModal();
+    });
+
+    document.addEventListener('keydown', handleGlobalKeydown);
 
     // Copy / Share
     elements.copyBtn.addEventListener('click', copyProjectBrief);
     elements.shareBtn.addEventListener('click', shareProjectBrief);
-    
-    // Native share fallback hiding
-    if (!navigator.share) {
-        elements.shareBtn.style.display = 'none';
-        elements.copyBtn.classList.remove('secondary-btn');
-        elements.copyBtn.classList.add('primary-btn');
+    elements.groupCopyBtn.addEventListener('click', copyGroupProjectBrief);
+    elements.groupShareBtn.addEventListener('click', shareGroupProjectBrief);
+}
+
+function handleGlobalKeydown(e) {
+    if (e.key !== 'Escape') return;
+
+    if (isOverlayVisible(elements.groupRevealOverlay)) {
+        cancelGroupReveal();
+        return;
+    }
+
+    if (isOverlayVisible(elements.groupProjectModal)) {
+        closeGroupProjectModal();
+        return;
+    }
+
+    if (isOverlayVisible(elements.modal)) {
+        closeModal();
     }
 }
 
@@ -610,18 +828,25 @@ function populateResultCard(name, track, skills) {
     elements.resName.textContent = name;
     elements.resTrack.textContent = track;
     elements.resSkills.textContent = skills || 'N/A';
-    
+
     elements.resTitle.textContent = currentProject.title;
     elements.resPriority.textContent = `${currentProject.priority} Priority`;
-    
+
     elements.resPriority.className = 'badge';
     const priorityLower = currentProject.priority.toLowerCase();
     if (priorityLower === 'medium' || priorityLower === 'standard') elements.resPriority.classList.add('medium');
     else if (priorityLower === 'low') elements.resPriority.classList.add('low');
+
+    elements.groupRevealHeading.textContent = `${name}, one more reveal is waiting for your cohort.`;
+    elements.groupRevealDescription.textContent =
+        `Reveal ${groupProject.shortTitle}, the shared build that brings the whole team together for the final presentation.`;
+    setGroupRevealButtonState(false);
 }
 
 // Modal handling
 function openModal() {
+    if (!currentProject) return;
+
     // Populate Modal Content
     elements.modalTitle.textContent = currentProject.title;
     elements.modalOverview.textContent = currentProject.overview;
@@ -648,28 +873,238 @@ function openModal() {
         elements.modalDeliverables.appendChild(li);
     });
 
-    elements.modal.classList.remove('hidden-state');
-    setTimeout(() => {
-        elements.modal.classList.add('active-state');
-        // Move focus inside the modal for accessibility
-        elements.modal.focus();
-    }, 10);
-    
-    document.body.style.overflow = 'hidden';
+    showOverlay(elements.modal);
 }
 
 function closeModal() {
-    elements.modal.classList.remove('active-state');
+    hideOverlay(elements.modal, { returnFocusTo: elements.viewProjectBtn });
+}
+
+function startGroupProjectReveal() {
+    clearGroupRevealTimers();
+    resetGroupRevealState();
+    setGroupRevealButtonState(true);
+    showOverlay(elements.groupRevealOverlay);
+    updateGroupRevealStage(0);
+
+    const stageDuration = 900;
+
+    for (let index = 1; index < groupProject.revealSequence.length; index += 1) {
+        const timer = setTimeout(() => {
+            updateGroupRevealStage(index);
+        }, index * stageDuration);
+        revealTimers.push(timer);
+    }
+
+    const completionTimer = setTimeout(() => {
+        completeGroupReveal();
+    }, groupProject.revealSequence.length * stageDuration + 450);
+
+    revealTimers.push(completionTimer);
+}
+
+function updateGroupRevealStage(index) {
+    const stage = groupProject.revealSequence[index];
+    if (!stage) return;
+
+    elements.groupRevealCopyBlock.classList.remove('is-updating');
+    void elements.groupRevealCopyBlock.offsetWidth;
+    elements.groupRevealCopyBlock.classList.add('is-updating');
+
+    elements.groupRevealTitle.textContent = stage.title;
+    elements.groupRevealText.textContent = stage.text;
+    elements.groupRevealStatus.textContent = stage.status;
+    elements.groupRevealProgress.style.width = `${((index + 1) / groupProject.revealSequence.length) * 100}%`;
+
+    Array.from(elements.groupRevealSteps.children).forEach((step, stepIndex) => {
+        step.classList.toggle('active', stepIndex === index);
+        step.classList.toggle('complete', stepIndex < index);
+    });
+}
+
+function completeGroupReveal() {
+    clearGroupRevealTimers();
+    setGroupRevealButtonState(false);
+
+    hideOverlay(elements.groupRevealOverlay, {
+        onHidden: openGroupProjectModal
+    });
+}
+
+function cancelGroupReveal() {
+    clearGroupRevealTimers();
+    resetGroupRevealState();
+    setGroupRevealButtonState(false);
+
+    hideOverlay(elements.groupRevealOverlay, {
+        returnFocusTo: elements.revealGroupBtn
+    });
+}
+
+function openGroupProjectModal() {
+    populateGroupProjectModal();
+    showOverlay(elements.groupProjectModal);
+}
+
+function closeGroupProjectModal() {
+    hideOverlay(elements.groupProjectModal, { returnFocusTo: elements.revealGroupBtn });
+}
+
+function populateGroupProjectModal() {
+    elements.groupModalTitle.textContent = groupProject.title;
+    elements.groupModalTagline.textContent =
+        "A shared cohort challenge built for a strong live presentation reveal.";
+    elements.groupHeroTitle.textContent = groupProject.shortTitle;
+    elements.groupHeroSummary.textContent = groupProject.summary;
+    elements.groupOverview.textContent = groupProject.overview;
+    elements.groupProblem.textContent = groupProject.problemStatement;
+
+    renderInfoCards(elements.groupMainUsers, groupProject.mainUsers);
+    renderInfoCards(elements.groupCoreModules, groupProject.coreModules);
+    renderInfoCards(elements.groupOwnership, groupProject.ownership);
+    renderDetailList(elements.groupTechnicalFeatures, groupProject.technicalFeatures);
+    renderDetailList(elements.groupAnimationIdeas, groupProject.animationIdeas);
+    renderScopeCards(elements.groupMvpScope, groupProject.mvpScope);
+    renderDetailList(elements.groupDeliverables, groupProject.deliverables);
+    renderDetailList(elements.groupSuccess, groupProject.successLooksLike);
+}
+
+function renderInfoCards(container, items) {
+    container.innerHTML = '';
+
+    items.forEach(item => {
+        const card = document.createElement('article');
+        card.className = 'info-card';
+
+        const title = document.createElement('h4');
+        title.textContent = item.title;
+
+        const description = document.createElement('p');
+        description.textContent = item.description;
+
+        card.append(title, description);
+        container.appendChild(card);
+    });
+}
+
+function renderDetailList(container, items) {
+    container.innerHTML = '';
+
+    items.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        container.appendChild(li);
+    });
+}
+
+function renderScopeCards(container, items) {
+    container.innerHTML = '';
+
+    items.forEach(item => {
+        const card = document.createElement('article');
+        card.className = 'scope-card';
+
+        const badge = document.createElement('span');
+        badge.className = 'scope-badge';
+        badge.textContent = item.phase;
+
+        const title = document.createElement('h4');
+        title.textContent = item.focus;
+
+        const list = document.createElement('ul');
+        list.className = 'mini-list';
+
+        item.items.forEach(scopeItem => {
+            const li = document.createElement('li');
+            li.textContent = scopeItem;
+            list.appendChild(li);
+        });
+
+        card.append(badge, title, list);
+        container.appendChild(card);
+    });
+}
+
+function resetGroupRevealTeaser() {
+    elements.groupRevealHeading.textContent = 'There is one more reveal waiting for your team.';
+    elements.groupRevealDescription.textContent =
+        'Step into the shared project brief designed for the full cohort and staged for a polished live presentation.';
+}
+
+function setGroupRevealButtonState(isLoading) {
+    elements.revealGroupBtn.disabled = isLoading;
+    elements.revealGroupBtn.textContent = isLoading ? 'Revealing Group Project...' : 'Reveal Group Project';
+}
+
+function resetGroupRevealState() {
+    const firstStage = groupProject.revealSequence[0];
+
+    elements.groupRevealTitle.textContent = firstStage.title;
+    elements.groupRevealText.textContent = firstStage.text;
+    elements.groupRevealStatus.textContent = 'Preparing the shared brief...';
+    elements.groupRevealProgress.style.width = '0%';
+    elements.groupRevealCopyBlock.classList.remove('is-updating');
+
+    Array.from(elements.groupRevealSteps.children).forEach(step => {
+        step.classList.remove('active', 'complete');
+    });
+}
+
+function clearGroupRevealTimers() {
+    revealTimers.forEach(timer => clearTimeout(timer));
+    revealTimers = [];
+}
+
+function showOverlay(overlay) {
+    overlay.classList.remove('hidden-state');
+
+    requestAnimationFrame(() => {
+        overlay.classList.add('active-state');
+        syncBodyScrollLock();
+        overlay.focus();
+    });
+}
+
+function hideOverlay(overlay, options = {}) {
+    const { onHidden, returnFocusTo } = options;
+
+    overlay.classList.remove('active-state');
+
     setTimeout(() => {
-        elements.modal.classList.add('hidden-state');
-        document.body.style.overflow = '';
-        // Return focus to trigger button
-        elements.viewProjectBtn.focus();
-    }, 300);
+        overlay.classList.add('hidden-state');
+        syncBodyScrollLock();
+
+        if (typeof onHidden === 'function') {
+            onHidden();
+        }
+
+        if (returnFocusTo) {
+            returnFocusTo.focus();
+        }
+    }, OVERLAY_TRANSITION_MS);
+}
+
+function forceHideOverlay(overlay) {
+    overlay.classList.remove('active-state');
+    overlay.classList.add('hidden-state');
+}
+
+function isOverlayVisible(overlay) {
+    return !overlay.classList.contains('hidden-state');
+}
+
+function syncBodyScrollLock() {
+    const hasVisibleOverlay = [
+        elements.modal,
+        elements.groupRevealOverlay,
+        elements.groupProjectModal
+    ].some(isOverlayVisible);
+
+    document.body.style.overflow = hasVisibleOverlay ? 'hidden' : '';
 }
 
 // Build text formatted for copying/sharing
-function getBriefText() {
+function getPersonalBriefText() {
     let text = `SCHOLAR DETAILS:\n`;
     text += `Name: ${currentScholarName}\n`;
     text += `Track: ${currentScholarTrack}\n`;
@@ -699,13 +1134,70 @@ function getBriefText() {
     return text;
 }
 
-// Copy to Clipboard
-async function copyProjectBrief() {
-    const textToCopy = getBriefText();
-    
+function getGroupBriefText() {
+    let text = `GROUP PROJECT BRIEF\n`;
+    text += `${groupProject.title}\n\n`;
+
+    text += `PRODUCT OVERVIEW:\n${groupProject.overview}\n\n`;
+    text += `PROBLEM STATEMENT:\n${groupProject.problemStatement}\n\n`;
+
+    text += `MAIN USERS:\n`;
+    groupProject.mainUsers.forEach(user => {
+        text += `- ${user.title}: ${user.description}\n`;
+    });
+    text += `\n`;
+
+    text += `CORE PRODUCT MODULES:\n`;
+    groupProject.coreModules.forEach(module => {
+        text += `- ${module.title}: ${module.description}\n`;
+    });
+    text += `\n`;
+
+    text += `WHO OWNS WHAT:\n`;
+    groupProject.ownership.forEach(owner => {
+        text += `- ${owner.title}: ${owner.description}\n`;
+    });
+    text += `\n`;
+
+    text += `SUGGESTED TECHNICAL FEATURES:\n`;
+    groupProject.technicalFeatures.forEach(feature => {
+        text += `- ${feature}\n`;
+    });
+    text += `\n`;
+
+    text += `ANIMATION IDEAS:\n`;
+    groupProject.animationIdeas.forEach(idea => {
+        text += `- ${idea}\n`;
+    });
+    text += `\n`;
+
+    text += `2-WEEK MVP SCOPE:\n`;
+    groupProject.mvpScope.forEach(scope => {
+        text += `${scope.phase} - ${scope.focus}\n`;
+        scope.items.forEach(item => {
+            text += `- ${item}\n`;
+        });
+    });
+    text += `\n`;
+
+    text += `EXPECTED DELIVERABLES:\n`;
+    groupProject.deliverables.forEach(deliverable => {
+        text += `- ${deliverable}\n`;
+    });
+    text += `\n`;
+
+    text += `WHAT SUCCESS LOOKS LIKE:\n`;
+    groupProject.successLooksLike.forEach(success => {
+        text += `- ${success}\n`;
+    });
+
+    return text;
+}
+
+async function copyTextToClipboard(textToCopy, successMessage) {
     try {
         await navigator.clipboard.writeText(textToCopy);
-        showToast("Project brief copied to clipboard!");
+        showToast(successMessage);
     } catch (err) {
         console.error('Failed to copy text: ', err);
         const textArea = document.createElement("textarea");
@@ -714,7 +1206,7 @@ async function copyProjectBrief() {
         textArea.select();
         try {
             document.execCommand('copy');
-            showToast("Project brief copied!");
+            showToast(successMessage);
         } catch (e) {
             alert("Failed to copy. Please manually select and copy the text.");
         }
@@ -722,32 +1214,49 @@ async function copyProjectBrief() {
     }
 }
 
-// Share via Web Share API
-async function shareProjectBrief() {
+async function shareText(title, text, successMessage) {
     if (navigator.share) {
         try {
             await navigator.share({
-                title: `Scholar Project: ${currentProject.title}`,
-                text: getBriefText(),
+                title,
+                text,
             });
-            showToast("Project shared successfully!");
+            showToast(successMessage);
         } catch (err) {
             if (err.name !== 'AbortError') {
                 console.error('Error sharing:', err);
-                copyProjectBrief();
+                copyTextToClipboard(text, "Brief copied to clipboard!");
             }
         }
     } else {
-        copyProjectBrief();
+        copyTextToClipboard(text, "Brief copied to clipboard!");
     }
+}
+
+// Copy / Share actions
+function copyProjectBrief() {
+    copyTextToClipboard(getPersonalBriefText(), "Project brief copied to clipboard!");
+}
+
+function shareProjectBrief() {
+    shareText(`Scholar Project: ${currentProject.title}`, getPersonalBriefText(), "Project shared successfully!");
+}
+
+function copyGroupProjectBrief() {
+    copyTextToClipboard(getGroupBriefText(), "Group brief copied to clipboard!");
+}
+
+function shareGroupProjectBrief() {
+    shareText(groupProject.title, getGroupBriefText(), "Group project shared successfully!");
 }
 
 // Toast notification
 function showToast(message) {
     elements.toast.textContent = message;
     elements.toast.classList.add('show');
-    
-    setTimeout(() => {
+
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
         elements.toast.classList.remove('show');
     }, 3000);
 }
@@ -755,7 +1264,7 @@ function showToast(message) {
 // Reset App state
 function resetApp() {
     elements.form.reset();
-    
+
     // Explicitly clear readOnly attributes
     elements.trackInput.readOnly = false;
     elements.skillsInput.readOnly = false;
@@ -772,6 +1281,16 @@ function resetApp() {
 
     // Reset disabled states
     elements.generateBtn.disabled = false;
+    setGroupRevealButtonState(false);
+
+    // Reset new reveal flow state
+    clearGroupRevealTimers();
+    resetGroupRevealState();
+    resetGroupRevealTeaser();
+    forceHideOverlay(elements.modal);
+    forceHideOverlay(elements.groupRevealOverlay);
+    forceHideOverlay(elements.groupProjectModal);
+    syncBodyScrollLock();
 
     switchSections(elements.resultSection, elements.formSection);
 }

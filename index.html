@@ -12,14 +12,12 @@
 </head>
 <body>
     <div class="app-container">
-        <!-- Main Application Area -->
         <main class="main-card">
             <header>
                 <h1>Scholar Project Matcher</h1>
                 <p>Welcome to the scholarship portal. Enter your details to reveal your personalized capstone project.</p>
             </header>
 
-            <!-- State 1: Input Form -->
             <section id="form-section" class="active-state">
                 <form id="matcher-form">
                     <div class="form-group">
@@ -42,7 +40,6 @@
                 </form>
             </section>
 
-            <!-- State 2: Loading Section -->
             <section id="loading-section" class="hidden-state">
                 <div class="loader-content">
                     <div class="spinner"></div>
@@ -54,33 +51,42 @@
                 </div>
             </section>
 
-            <!-- State 3: Result Card -->
             <section id="result-section" class="hidden-state">
                 <div class="result-card">
                     <div class="result-header">
                         <span class="badge" id="result-priority">High Priority</span>
                         <h2 id="result-title">Project Title</h2>
                     </div>
+
                     <div class="scholar-details-summary">
                         <p><strong>Scholar:</strong> <span id="res-name">Name</span></p>
                         <p><strong>Track:</strong> <span id="res-track">Track</span></p>
                         <p><strong>Skills:</strong> <span id="res-skills">Skills</span></p>
                     </div>
+
                     <div class="result-actions">
-                        <button id="view-project-btn" class="primary-btn">View Full Project</button>
-                        <button id="reset-btn" class="secondary-btn">Reset</button>
+                        <button id="view-project-btn" class="primary-btn" type="button">View Full Project</button>
+                        <button id="reset-btn" class="secondary-btn" type="button">Reset</button>
+                    </div>
+
+                    <div class="group-reveal-panel">
+                        <div class="group-reveal-copy">
+                            <span class="section-kicker">Cohort Challenge</span>
+                            <h3 id="group-reveal-heading">There is one more reveal waiting for your team.</h3>
+                            <p id="group-reveal-description">Step into the shared project brief designed for the full cohort and staged for a polished live presentation.</p>
+                        </div>
+                        <button id="reveal-group-btn" class="special-btn" type="button">Reveal Group Project</button>
                     </div>
                 </div>
             </section>
         </main>
 
-        <!-- Secondary Area: Group Project -->
         <aside class="group-project-card">
             <div class="glass-content">
-                <h3>Shared Group Project</h3>
-                <h4 id="group-title">ScholarSphere</h4>
-                <p id="group-summary">A collaborative cross-functional project for all scholars.</p>
-                <h5>Key Modules:</h5>
+                <span class="section-kicker">Shared Group Project</span>
+                <h3 id="group-title">SkillSpring: Student Learning, Mentorship, and Progress Platform</h3>
+                <p id="group-summary">A collaborative cross-functional product challenge for the full scholar cohort.</p>
+                <h4>Spotlight Modules</h4>
                 <ul id="group-modules">
                     <!-- Populated by JS -->
                 </ul>
@@ -88,14 +94,11 @@
         </aside>
     </div>
 
-    <!-- Modal for Full Project Brief -->
     <div id="project-modal" class="modal-overlay hidden-state" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
         <div class="modal-container">
             <div class="modal-header">
                 <h2 id="modal-title">Project Title</h2>
-                <button id="modal-close-icon" class="icon-btn" aria-label="Close modal">
-                    &times;
-                </button>
+                <button id="modal-close-icon" class="icon-btn" aria-label="Close modal" type="button">&times;</button>
             </div>
             <div class="modal-body" id="printable-brief">
                 <div class="brief-section">
@@ -129,14 +132,140 @@
             </div>
             <div class="modal-footer">
                 <div class="share-actions">
-                    <button id="copy-btn" class="secondary-btn">Copy Brief</button>
-                    <button id="share-btn" class="secondary-btn">Share</button>
+                    <button id="copy-btn" class="secondary-btn" type="button">Copy Brief</button>
+                    <button id="share-btn" class="secondary-btn" type="button">Share</button>
                 </div>
-                <button id="modal-close-btn" class="primary-btn">Close</button>
+                <button id="modal-close-btn" class="primary-btn" type="button">Close</button>
             </div>
         </div>
     </div>
-    
+
+    <div id="group-reveal-overlay" class="modal-overlay hidden-state group-reveal-overlay" role="dialog" aria-modal="true" aria-labelledby="group-reveal-title" tabindex="-1">
+        <div class="reveal-shell">
+            <div class="reveal-orb reveal-orb-one" aria-hidden="true"></div>
+            <div class="reveal-orb reveal-orb-two" aria-hidden="true"></div>
+
+            <span class="section-kicker reveal-kicker">Cohort Spotlight</span>
+
+            <div id="group-reveal-copy-block" class="reveal-copy" aria-live="polite">
+                <h2 id="group-reveal-title">Are you ready?</h2>
+                <p id="group-reveal-text">Your cohort challenge is here.</p>
+                <p id="group-reveal-status" class="reveal-status">Preparing the shared brief...</p>
+            </div>
+
+            <div class="reveal-progress-track" aria-hidden="true">
+                <div id="group-reveal-progress" class="reveal-progress-fill"></div>
+            </div>
+
+            <div id="group-reveal-steps" class="reveal-steps"></div>
+        </div>
+    </div>
+
+    <div id="group-project-modal" class="modal-overlay hidden-state" role="dialog" aria-modal="true" aria-labelledby="group-modal-title" tabindex="-1">
+        <div class="modal-container group-modal-container">
+            <div class="modal-header group-modal-header">
+                <div>
+                    <span class="section-kicker">Here is your group project</span>
+                    <h2 id="group-modal-title">SkillSpring: Student Learning, Mentorship, and Progress Platform</h2>
+                    <p id="group-modal-tagline">A shared cohort challenge built for a strong live presentation reveal.</p>
+                </div>
+                <button id="group-modal-close-icon" class="icon-btn" aria-label="Close group project modal" type="button">&times;</button>
+            </div>
+
+            <div class="modal-body group-modal-body" id="group-printable-brief">
+                <section class="group-hero-card">
+                    <p class="hero-label">Presentation Brief</p>
+                    <h3 id="group-hero-title">SkillSpring</h3>
+                    <p id="group-hero-summary"></p>
+                </section>
+
+                <section class="group-brief-section group-overview-grid">
+                    <article class="group-brief-card">
+                        <h3>Product Overview</h3>
+                        <p id="group-overview"></p>
+                    </article>
+
+                    <article class="group-brief-card">
+                        <h3>Problem Statement</h3>
+                        <p id="group-problem"></p>
+                    </article>
+                </section>
+
+                <section class="group-brief-section">
+                    <div class="section-heading">
+                        <span class="section-kicker">Main Users</span>
+                        <h3>Who the platform serves</h3>
+                    </div>
+                    <div id="group-main-users" class="info-card-grid"></div>
+                </section>
+
+                <section class="group-brief-section">
+                    <div class="section-heading">
+                        <span class="section-kicker">Core Product Modules</span>
+                        <h3>What the MVP should contain</h3>
+                    </div>
+                    <div id="group-core-modules" class="info-card-grid"></div>
+                </section>
+
+                <section class="group-brief-section">
+                    <div class="section-heading">
+                        <span class="section-kicker">Who Owns What</span>
+                        <h3>Cross-functional team ownership</h3>
+                    </div>
+                    <div id="group-ownership" class="info-card-grid"></div>
+                </section>
+
+                <section class="group-brief-section">
+                    <div class="section-heading">
+                        <span class="section-kicker">Suggested Technical Features</span>
+                        <h3>Implementation ideas to make the demo feel real</h3>
+                    </div>
+                    <ul id="group-technical-features" class="detail-list"></ul>
+                </section>
+
+                <section class="group-brief-section">
+                    <div class="section-heading">
+                        <span class="section-kicker">Animation Ideas</span>
+                        <h3>Subtle motion that adds presentation impact</h3>
+                    </div>
+                    <ul id="group-animation-ideas" class="detail-list"></ul>
+                </section>
+
+                <section class="group-brief-section">
+                    <div class="section-heading">
+                        <span class="section-kicker">2-Week MVP Scope</span>
+                        <h3>How to pace the build</h3>
+                    </div>
+                    <div id="group-mvp-scope" class="scope-grid"></div>
+                </section>
+
+                <section class="group-brief-section">
+                    <div class="section-heading">
+                        <span class="section-kicker">Expected Deliverables</span>
+                        <h3>What the team should present</h3>
+                    </div>
+                    <ul id="group-deliverables" class="detail-list"></ul>
+                </section>
+
+                <section class="group-brief-section">
+                    <div class="section-heading">
+                        <span class="section-kicker">What Success Looks Like</span>
+                        <h3>How the team will know the MVP lands well</h3>
+                    </div>
+                    <ul id="group-success" class="detail-list"></ul>
+                </section>
+            </div>
+
+            <div class="modal-footer">
+                <div class="share-actions">
+                    <button id="group-copy-btn" class="secondary-btn" type="button">Copy Group Brief</button>
+                    <button id="group-share-btn" class="secondary-btn" type="button">Share</button>
+                </div>
+                <button id="group-modal-close-btn" class="primary-btn" type="button">Close</button>
+            </div>
+        </div>
+    </div>
+
     <div class="toast" id="toast-message">Copied to clipboard!</div>
 
     <script src="script.js"></script>
